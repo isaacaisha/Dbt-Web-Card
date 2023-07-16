@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 
 # @app.route('/home/<name>')
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def home():
     time_sec = time.localtime()
     current_year = time_sec.tm_year
@@ -15,7 +15,7 @@ def home():
     # return 'Siisi Chacal, Once Again👌🏿🙃💪🏿'
 
 
-@app.route('/style/<name>')
+@app.route('/style/<name>', methods=['GET', 'POST'])
 def style(name=None):
     return render_template('style.css', name=name)
 
