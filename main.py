@@ -24,6 +24,8 @@ def create_app():
     return app
 
 
+app = create_app()
+
+# This block is executed when running the script directly
 if __name__ == '__main__':
-    app = create_app()
     app.run(debug=True, host='0.0.0.0')
