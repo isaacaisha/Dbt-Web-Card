@@ -1,23 +1,19 @@
 from flask import Flask, render_template
-import random
-import time
+
+import main
 
 app = Flask(__name__)
 
 
-# @app.route('/home/<name>')
 @app.route('/', methods=['GET', 'POST'])
 def home():
-    time_sec = time.localtime()
-    current_year = time_sec.tm_year
-    random_number = random.randint(1, 9)
-    return render_template('index.html', num=random_number, year=current_year)
-    # return 'Siisi Chacal, Once Again👌🏿🙃💪🏿'
+    # Your code here
+    return render_template('index.html')
 
 
-@app.route('/style/<name>', methods=['GET', 'POST'])
+@app.route('/style/<name>')
 def style(name=None):
-    return render_template('style.css', name=name)
+    return app.send_static_file(name)
 
 
 if __name__ == '__main__':
