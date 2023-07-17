@@ -4,6 +4,8 @@ import time
 
 app = Flask(__name__)
 
+app.secret_key = "any-string-you-want-just-keep-it-secret"
+
 
 @app.route('/favicon.ico')
 def favicon():
