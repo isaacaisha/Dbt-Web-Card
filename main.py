@@ -10,7 +10,7 @@ def favicon():
     return app.send_static_file('images/favicon.ico')
 
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def home():
     time_sec = time.localtime()
     current_year = time_sec.tm_year
