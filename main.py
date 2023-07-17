@@ -5,7 +5,11 @@ import time
 app = Flask(__name__)
 
 
-# @app.route('/home/<name>')
+@app.route('/favicon.ico')
+def favicon():
+    return app.send_static_file('images/favicon.ico')
+
+
 @app.route('/')
 def home():
     time_sec = time.localtime()
