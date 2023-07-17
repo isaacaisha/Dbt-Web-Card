@@ -11,7 +11,7 @@ def favicon():
 
 
 @app.route('/')
-def home():
+def index():
     time_sec = time.localtime()
     current_year = time_sec.tm_year
     # getting the current date and time
