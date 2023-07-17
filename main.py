@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-import random
+from datetime import datetime
 import time
 
 app = Flask(__name__)
@@ -14,8 +14,11 @@ def favicon():
 def home():
     time_sec = time.localtime()
     current_year = time_sec.tm_year
-    random_number = random.randint(1, 9)
-    return render_template('index.html', num=random_number, year=current_year)
+    # getting the current date and time
+    current_datetime = datetime.now()
+    # getting the time from the current date and time in the given format
+    current_time = current_datetime.strftime("%a/%d/%B")
+    return render_template('index.html', date=current_time, year=current_year)
     # return 'Siisi Chacal, Once Again👌🏿🙃💪🏿'
 
 

@@ -861,3 +861,18 @@
 		body.is-ie #wrapper {
 			height: 100%;
 		}
+
+/* Icon border style */
+
+        ul li a.fa-twitter {
+            border: 1px solid lime;
+        }
+
+		ul li a.fa-instagram {
+		    border: 1px solid gold;
+		}
+
+		ul li a.fa-facebook {
+		    border: 1px solid lightsalmon;
+		}
+
